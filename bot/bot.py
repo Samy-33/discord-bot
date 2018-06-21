@@ -4,7 +4,7 @@ import random
 import pickle
 import os
 import requests as rq
-
+from constants.bot_constants import SECRET_KEY
 
 client = discord.Client()
 
@@ -48,4 +48,5 @@ async def on_message(message):
                 to_send += member.name + '\n'
         await client.send_message(message.channel, to_send)
 
-client.run('Secret-Key-Goes-Here')
+
+client.run(SECRET_KEY)

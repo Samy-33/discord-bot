@@ -5,6 +5,7 @@ from services.abstract_api import BaseAPIClass
 class YoMomma(BaseAPIClass):
 
     def _get_data(self, vars: dict):
+
         rq_obj = rq.get(self._endpoint, params=vars)
         return rq_obj
 

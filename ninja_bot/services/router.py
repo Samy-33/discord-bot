@@ -1,4 +1,6 @@
 from services.from_api.yomomma import yomomma
+from services.from_api.news import news
+from services.sendhelp import sendhelp
 
 class Router:
     def __init__(self):
@@ -7,7 +9,13 @@ class Router:
     def _initialize_routes(self):
         routes = {
             'yomomma': {
-                'call': yomomma.get_data_as_dict,
+                'call': yomomma.respond
+            },
+            'news': {
+                'call': news.respond
+            },
+            'help': {
+                'call': sendhelp.respond
             }
         }
         return routes
@@ -15,5 +23,10 @@ class Router:
     def get_yomomma(self):
         return self._routes['yomomma']['call']
 
+    def get_news(self):
+        return self._routes['news']['call']
+
+    def get_help(self):
+        return self._routes['help']['call']
 
 router = Router()

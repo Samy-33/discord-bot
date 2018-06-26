@@ -24,7 +24,22 @@ async def on_message(message):
         await client.send_message(message.channel, 'Hey, there.', tts=True)
 
     elif message.content.startswith('!!yomomma'):
-        to_send = router.get_yomomma()({})
+        to_send = router.get_yomomma()([])
+        await client.send_message(message.channel, to_send)
+    
+    elif message.content.startswith('!!news'):
+        args = message.content.split(' ')
+
+        if len(args) > 1:
+            args = args[1:]
+        else:
+            args = []
+ 
+        to_send = router.get_news()(args)
+        await client.send_message(message.channel, to_send)
+
+    elif message.content.startswith('!!help'):
+        to_send = router.get_help()()
         await client.send_message(message.channel, to_send)
 
 

@@ -38,6 +38,17 @@ async def on_message(message):
         to_send = router.get_news()(args)
         await client.send_message(message.channel, to_send)
 
+    elif message.content.startswith('!!define'):
+        args = message.content.split(' ')
+
+        if len(args) > 1:
+            args = args[1:]
+        else:
+            args = []
+
+        to_send = router.get_dictionary()(args)
+        await client.send_message(message.channel, to_send)
+
     elif message.content.startswith('!!help'):
         to_send = router.get_help()()
         await client.send_message(message.channel, to_send)

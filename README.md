@@ -8,11 +8,11 @@ Using python 3.5 for development
 * `$ source .env/bin/activate`: Activate virtual environemnt  
 * `$ pip install -r requirements.txt`: Install dependencies  
 * `$ export BOT_SECRET_KEY="secret_key"`: env variable for bot's secret key  
-* `$ export NEWS_API_KEY="api key for https://newsapi.org`  
+* `$ export NEWS_API_KEY="api key"`: API Key for https://newsapi.org  
   
 ## How to Contribute  
 * Fork the repository  
 * Open an issue or check out open issues  
 * Send a pull-request  
 * Once it is verifies, it will be merged  
-* Please follow PIP8 python standards while writing code
+* Please follow PEP8 python standards while writing code (Right now this code might not be compliant with PEP8, will see to it later.)

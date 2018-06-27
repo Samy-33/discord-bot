@@ -9,7 +9,7 @@ class NewsAPI(BaseAPIClass):
     def _get_data(self, vars: dict):
 
         vars.update({
-            'apiKey': NEWS_API_KEY
+            'apiKey': self._api_key
         })
 
         rq_obj = rq.get(self._endpoint, params=vars)
@@ -42,4 +42,5 @@ options = {
 }
 
 news = NewsAPI('https://newsapi.org/v2/everything',
+                api_key=NEWS_API_KEY,
                 map_message_to_query=options)
